@@ -35,7 +35,7 @@ const mytail = new Tail(VHSERVER_CONSOLE_LOG_PATH, line => {
     }
 
     matches = line.match(/Got character ZDOID from (?<name>[\w\s]+) : \d+/);
-    if (matches != null) {
+    if (matches != null && lastId != null) {
         const name = matches.groups.name;
         online[lastId] = name;
 
