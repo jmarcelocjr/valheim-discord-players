@@ -28,7 +28,7 @@ client.on('ready', async () => {
 const mytail = new Tail(VHSERVER_CONSOLE_LOG_PATH, line => {
     const lastCount = Object.keys(online).length;
 
-    let matches = line.match(/Got session request from (?<id>[\d]+)/);
+    let matches = line.match(/Got handshake from client (?<id>[\d]+)/);
     if (matches != null) {
         lastId = matches.groups.id;
         return;
